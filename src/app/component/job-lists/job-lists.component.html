@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Search" autocomplete="off"  />
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-primary" [routerLink]="['/jobs/new']">Create job</button>
+        </div>
+
+
+
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Job Number</th>
+                    <th>Job Title</th>
+                    <th>Job Start Date</th>
+                    <th>Job End Date</th>
+                    <th>Experience Required</th>
+                    <th>No. Of Opening</th>
+                    <th>Job Notes</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of joblist| filter: searchText">
+                    <td>{{list.id}}</td>
+                    <td>{{list.job_number}}</td>
+                    <td>{{list.job_title}}</td>
+                    <td>{{list.job_start_date}}</td>
+                    <td>{{list.job_close_date}}</td>
+                    <td>{{list.experience_required}}</td>
+                    <td>{{list.number_of_openings}}</td>
+                    <td>{{list.job_notes}}</td>
+                    <td>
+                        <button class="button" [routerLink]="['/jobs',list.id]">
+                            Click Here
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

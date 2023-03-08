@@ -1,0 +1,46 @@
+<!-- <p class="text-center mt-2 create">Job Form</p> -->
+<h1 class="text-center mt-2 create">Job Form</h1>
+
+
+<div class="container">
+    <div class="row">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Job Number</label>
+                <input type="any" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Jon Number" formControlName="job_number">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Job Title</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Jon Title" formControlName="job_title">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Job Start Date</label>
+                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Job Start Date" formControlName="job_start_date">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Job End Date</label>
+                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Job End Date" formControlName="job_close_date">
+            </div>
+            <div class="form-group"><label for="exampleInputEmail1">Experience Required</label>
+                <select class="form-control" name="job" id="job" formControlName="experience_required">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="form-group"><label for="exampleInputEmail1">No. Of Opening</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter No Of Opening" formControlName="number_of_openings">
+            </div>
+            <div class="form-group"><label for="exampleInputEmail1">Job Notes</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Job Notes" formControlName="job_notes">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </form>
+    </div>
+</div>
