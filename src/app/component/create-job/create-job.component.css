@@ -1,4 +1,4 @@
-.create {
-    font-size: 30px;
-    color: #405065;
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+    box-sizing: 0 0 13px inset rgba(255,0,0,0.2 );
 }

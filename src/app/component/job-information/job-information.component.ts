@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JobService } from '../service/job-service.service';
 
@@ -13,15 +13,14 @@ export class JobInformationComponent implements OnInit {
   jobDetails: any;
   jobnew: any;
   myForm = new FormGroup({
-    job_number: new FormControl(),
-    job_title: new FormControl(),
-    job_start_date: new FormControl(),
-    job_close_date: new FormControl(),
-    experience_required: new FormControl(),
-    number_of_openings: new FormControl(),
-    job_notes: new FormControl(),
-
-  })
+    job_number: new FormControl('',Validators.required),
+    job_title: new FormControl('',Validators.required),
+    job_start_date: new FormControl('',Validators.required),
+    job_close_date: new FormControl('',Validators.required),
+    experience_required: new FormControl('',Validators.required),
+    number_of_openings: new FormControl('',Validators.required),
+    job_notes: new FormControl('',Validators.required),
+  });
   constructor(private route: ActivatedRoute, private routes:Router,private jobService: JobService) {
 
   }
